@@ -16,10 +16,10 @@ public class bSecurityCameraRaycst : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray groundRay = new Ray(this.transform.position, this.transform.forward);
+        Ray groundRay = new Ray(this.transform.position, -this.transform.up);
         RaycastHit hit;
 
-        Debug.DrawRay(this.transform.position, this.transform.forward * _cameraDistance, Color.green);
+        Debug.DrawRay(this.transform.position, -this.transform.up * _cameraDistance, Color.green);
 
         if(Physics.Raycast(groundRay, out hit, _cameraDistance, _mask))
         {

@@ -11,10 +11,14 @@ public class B_SecurityCameraRotator : MonoBehaviour
     [SerializeField] private Vector3 _targetOne = new Vector3();
     [SerializeField] private Vector3 _targetTwo = new Vector3();
 
-    [SerializeField] private float _speed = 0.1f;
+    [SerializeField] private Vector3 _resetRotation = new Vector3();
 
+    [SerializeField] private float _speed = 0.1f;
+    public Vector3 fuckit;
     private void Update()
     {
+        Debug.DrawRay(this.transform.position, -this.transform.up * 50, Color.black);
+
         if(_playerTransform == null)
         {
             // Can't see the player. Rotate randomly.
@@ -40,6 +44,9 @@ public class B_SecurityCameraRotator : MonoBehaviour
         else
         {
             // Player spotted! Look at the player until it leaves the camera view.
+            this.transform.LookAt(_playerTransform);
+            this.transform.Rotate(fuckit);
+            //this.transform.rotation = Quaternion.Euler(this.transform.eulerAngles.x, this.transform.eulerAngles.y - 180, this.transform.eulerAngles.z);
         }
     }
 
