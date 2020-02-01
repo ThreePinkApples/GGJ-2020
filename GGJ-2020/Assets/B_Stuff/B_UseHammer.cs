@@ -18,9 +18,14 @@ public class B_UseHammer : MonoBehaviour
 
     [SerializeField] private float _speed = 1500f;
 
-    public float intensity;
-    public float speed;
-    public float pause;
+
+    public float _caIntensity;
+    public float _caSpeed;
+    public float _caPause;
+
+    public float _vIntensity;
+    public float _vSpeed;
+    public float _vPause;
 
     // Update is called once per frame
     void Update()
@@ -85,6 +90,6 @@ public class B_UseHammer : MonoBehaviour
             other.GetComponent<L_ScriptMans>().Kill();
         }
 
-        GameObject.FindObjectOfType<B_PlayOneShotChromaticAberation>().PlayOneShot(intensity, speed, pause);
+        GameObject.FindObjectOfType<B_PlayOneShotChromaticAberation>().PlayOneShot(_caIntensity, _caSpeed, _caPause);
     }
 }

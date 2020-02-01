@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class B_PlayOneShotChromaticAberation : MonoBehaviour
+public class B_PlayOneShotVignette : MonoBehaviour
 {
     private float _intensity;
     private float _speed;
     private float _pause;
     private float timer = 0;
 
-    private ChromaticAberration _ca;
+    private float _defaultIntensity;
+
+    private Vignette _v;
+
+    private void Start()
+    {
+        this.GetComponent<PostProcessVolume>().profile.TryGetSettings(out _v);
+
+        _defaultIntensity = _v.intensity.value;
+    }
 
     public void PlayOneShot(float intensity, float speed, float pause)
     {
@@ -18,18 +27,17 @@ public class B_PlayOneShotChromaticAberation : MonoBehaviour
         _speed = speed;
         _pause = pause;
 
-        this.GetComponent<PostProcessVolume>().profile.TryGetSettings(out _ca);
 
         StartCoroutine(Shot());
     }
 
     private IEnumerator Shot()
     {
-        while(timer / _speed < 1)
+        while (timer / _speed < 1)
         {
             timer += Time.deltaTime;
 
-            _ca.intensity.value = _intensity * (timer / _speed);
+            _v.intensity.value = _intensity * (timer / _speed);
 
             yield return null;
         }
@@ -40,7 +48,7 @@ public class B_PlayOneShotChromaticAberation : MonoBehaviour
         {
             timer -= Time.deltaTime;
 
-            _ca.intensity.value = _intensity * (timer / _speed);
+            _v.intensity.value = _defaultIntensity * (timer / _speed);
 
             yield return null;
         }
