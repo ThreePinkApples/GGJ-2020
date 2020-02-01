@@ -186,9 +186,14 @@ MonoBehaviour:
   _originalRotation: {x: -45, y: 0, z: 0}
   _downRotation: {x: 0, y: 0, z: 0}
   _speed: 500
-  intensity: 0.5
-  speed: 0.1
-  pause: 0.1
+  _caIntensity: 0
+  _caSpeed: 0
+  _caPause: 0
+  _vIntensity: 0
+  _vSpeed: 0
+  _vPause: 0
+  _playerDeadSound: {fileID: 8765765384172978448, guid: 1cf308f21018c96419d131e6c629f5f8,
+    type: 3}
 --- !u!1 &2072479250
 GameObject:
   m_ObjectHideFlags: 0
