@@ -20,6 +20,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
 
+
 #if !MOBILE_INPUT
             private bool m_Running;
 #endif
@@ -74,6 +75,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public bool airControl; // can the user control the direction that is being moved in the air
             [Tooltip("set it to 0.1 or more if you get stuck in wall")]
             public float shellOffset; //reduce the radius by that ratio to avoid getting stuck in wall (a value of 0.1f is nice)
+
+
         }
 
 
@@ -88,6 +91,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_YRotation;
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
+
+        public static bool endIsNear = false;
 
 
         public Vector3 Velocity
@@ -224,19 +229,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            //avoids the mouse looking if the game is effectively paused
-            if (Mathf.Abs(Time.timeScale) < float.Epsilon) return;
-
-            // get the rotation before it's changed
-            float oldYRotation = transform.eulerAngles.y;
-
-            mouseLook.LookRotation (transform, cam.transform);
-
-            if (m_IsGrounded || advancedSettings.airControl)
+            if (!endIsNear)
             {
-                // Rotate the rigidbody velocity to match the new direction that the character is looking
-                Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
-                m_RigidBody.velocity = velRotation*m_RigidBody.velocity;
+
+                //avoids the mouse looking if the game is effectively paused
+                if (Mathf.Abs(Time.timeScale) < float.Epsilon) return;
+
+                // get the rotation before it's changed
+                float oldYRotation = transform.eulerAngles.y;
+
+                mouseLook.LookRotation(transform, cam.transform);
+
+                if (m_IsGrounded || advancedSettings.airControl)
+                {
+                    // Rotate the rigidbody velocity to match the new direction that the character is looking
+                    Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
+                    m_RigidBody.velocity = velRotation * m_RigidBody.velocity;
+                }
             }
         }
 
