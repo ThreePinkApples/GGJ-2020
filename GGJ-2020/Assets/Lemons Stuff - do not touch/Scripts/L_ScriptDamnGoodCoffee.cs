@@ -25,13 +25,6 @@ public class L_ScriptDamnGoodCoffee : MonoBehaviour
         musicVolume = (100 - distance)/100;
         Debug.Log(musicVolume);
         acidJazz.volume = musicVolume;
-
-        
-        
-        
-        
+   
     }
-
-
-    
 }
