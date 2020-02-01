@@ -24,6 +24,8 @@ public class B_Door : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             _targetRotation = _targetRotation == _openRotation ? _startRotation : _openRotation;
+
+            this.GetComponent<AudioSource>().Play();
         }
     }
 
