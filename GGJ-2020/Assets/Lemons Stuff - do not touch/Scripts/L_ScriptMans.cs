@@ -35,11 +35,11 @@ public class L_ScriptMans : MonoBehaviour
         rightLeg.transform.RotateAround(rightLegRotation.transform.position, rot, rotSpeed);
 
         //transform.rotation = Quaternion.Euler(0, Mathf.FloorToInt(Random.Range(0, 360)), 0);
-
+        /*
         float distance = Vector3.Distance(transform.position, player.transform.position);
         if(distance > 150)
         {
             Destroy(this);
-        }
+        }*/
     }
 }

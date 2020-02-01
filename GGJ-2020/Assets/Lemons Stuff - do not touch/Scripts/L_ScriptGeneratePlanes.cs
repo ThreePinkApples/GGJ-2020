@@ -10,16 +10,21 @@ public class L_ScriptGeneratePlanes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < spawnPoints.Length; i++)
-        {
-           GameObject temp = Instantiate(building, spawnPoints[i].transform.position, Quaternion.identity);
-            temp.transform.parent = spawnPoints[i].transform;
-        }
+        //SpawnBuildings();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void SpawnBuildings()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            GameObject temp = Instantiate(building, spawnPoints[i].transform.position, Quaternion.identity);
+            temp.transform.parent = spawnPoints[i].transform;
+        }
     }
 }
