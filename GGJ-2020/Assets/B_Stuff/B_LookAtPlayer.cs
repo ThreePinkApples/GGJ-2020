@@ -8,7 +8,7 @@ public class B_LookAtPlayer : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.Find("RigidBodyFPSController").transform;
+        _player = GameObject.Find("RigidBodyFPSController (1)").transform;
     }
 
     // Update is called once per frame
