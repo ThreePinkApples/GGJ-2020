@@ -18,11 +18,16 @@ public class B_Door : MonoBehaviour
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Quaternion.Euler(_targetRotation), Time.deltaTime * _speed);
         }
 
-        if (!PlayerIsCloseEnough)
-            return;
-
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if (!PlayerIsCloseEnough)
+                return;
+            else if(!PlayerHasHammer)
+            {
+                this.transform.parent.GetChild(1).gameObject.GetComponent<B_TellStory>().StartDialogue();
+                return;
+            }
+
             _targetRotation = _targetRotation == _openRotation ? _startRotation : _openRotation;
 
             this.GetComponent<AudioSource>().Play();
@@ -30,4 +35,6 @@ public class B_Door : MonoBehaviour
     }
 
     public bool PlayerIsCloseEnough { private get; set; } = false;
+
+    public bool PlayerHasHammer { private get; set; } = false;
 }
