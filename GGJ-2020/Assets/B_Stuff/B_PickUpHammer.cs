@@ -17,7 +17,10 @@ public class B_PickUpHammer : MonoBehaviour
         if(_player && Input.GetKeyDown(KeyCode.E))
         {
             GameObject.FindObjectOfType<B_ActivateHammer>().Activate();
-            GameObject.FindObjectOfType<B_Door>().PlayerHasHammer = true;
+
+            foreach (B_Door door in GameObject.FindObjectsOfType<B_Door>())
+                door.PlayerHasHammer = true;
+
             Destroy(this.gameObject);
         }
     }
