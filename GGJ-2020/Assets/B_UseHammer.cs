@@ -18,6 +18,10 @@ public class B_UseHammer : MonoBehaviour
 
     [SerializeField] private float _speed = 1500f;
 
+    public float intensity;
+    public float speed;
+    public float pause;
+
     // Update is called once per frame
     void Update()
     {
@@ -74,5 +78,6 @@ public class B_UseHammer : MonoBehaviour
     public void HammerHit()
     {
         Debug.Log("Hammer hit!");
+        GameObject.FindObjectOfType<B_PlayOneShotChromaticAberation>().PlayOneShot(intensity, speed, pause);
     }
 }
