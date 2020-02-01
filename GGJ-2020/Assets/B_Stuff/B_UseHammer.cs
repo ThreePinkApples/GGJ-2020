@@ -27,6 +27,8 @@ public class B_UseHammer : MonoBehaviour
     public float _vSpeed;
     public float _vPause;
 
+    [SerializeField] private GameObject _playerDeadSound = null;
+
     // Update is called once per frame
     void Update()
     {
@@ -91,5 +93,7 @@ public class B_UseHammer : MonoBehaviour
         }
 
         GameObject.FindObjectOfType<B_PlayOneShotChromaticAberation>().PlayOneShot(_caIntensity, _caSpeed, _caPause);
+
+        Instantiate(_playerDeadSound, this.transform.position, Quaternion.identity);
     }
 }
