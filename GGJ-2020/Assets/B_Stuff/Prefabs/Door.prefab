@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _openRotation: {x: 0, y: -130, z: 0}
-  _speed: 1500
+  _speed: 2000
 --- !u!82 &1262423293521444221
 AudioSource:
   m_ObjectHideFlags: 0

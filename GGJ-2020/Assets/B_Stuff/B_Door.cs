@@ -12,7 +12,7 @@ public class B_Door : MonoBehaviour
 
     private void Update()
     {
-        if(Quaternion.Angle(this.transform.rotation, Quaternion.Euler(_targetRotation)) > 0.001f)
+        if (Quaternion.Angle(this.transform.rotation, Quaternion.Euler(_targetRotation)) > 0.001f)
         {
             // Target not met. Rotate more!
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Quaternion.Euler(_targetRotation), Time.deltaTime * _speed);
