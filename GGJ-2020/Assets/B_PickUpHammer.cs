@@ -16,23 +16,8 @@ public class B_PickUpHammer : MonoBehaviour
     {
         if(_player && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Pick up");
-
-            Destroy(this.GetComponent<Collider>());
-            Destroy(this.GetComponent<Rigidbody>());
-
-            foreach(Collider collider in this.transform.GetComponentsInChildren<Collider>())
-            {
-                collider.isTrigger = true;
-            }
-
-            this.transform.SetParent(_player);
-            _pickUpPromptText.SetActive(false);
-
-            this.transform.localPosition = _onPickUpPosition;
-            this.transform.localRotation = Quaternion.Euler(_onPickUpRotation);
-
-            this.enabled = false;
+            GameObject.FindObjectOfType<B_ActivateHammer>().Activate();
+            Destroy(this.gameObject);
         }
     }
 
