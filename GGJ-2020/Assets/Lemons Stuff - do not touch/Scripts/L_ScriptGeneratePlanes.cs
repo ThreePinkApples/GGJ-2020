@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class L_ScriptGeneratePlanes : MonoBehaviour
 {
-    public GameObject[] spawnPoints = new GameObject[4];
+    public GameObject[] spawnPoints;
     public GameObject building;
 
     // Start is called before the first frame update
