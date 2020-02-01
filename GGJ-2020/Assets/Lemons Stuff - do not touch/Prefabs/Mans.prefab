@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 917382702438775611}
   - component: {fileID: -4904854477097909636}
   - component: {fileID: -932239883458195071}
+  - component: {fileID: 102541916}
   m_Layer: 12
   m_Name: Mans
   m_TagString: Untagged
@@ -425,7 +426,7 @@ Transform:
   - {fileID: 917382702584634763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!114 &917382702438775611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +443,7 @@ MonoBehaviour:
   rightLeg: {fileID: 3059967347519707804}
   leftLegRotation: {fileID: 917382702809749336}
   rightLegRotation: {fileID: 917382702584634763}
+  walkSpeed: 0.1
 --- !u!54 &-4904854477097909636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -467,11 +469,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 917382702438775608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1.0372345
   m_Height: 6.2216883
   m_Direction: 1
   m_Center: {x: -0.055789232, y: 5.121739, z: -0.016059399}
+--- !u!65 &102541916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917382702438775608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4737194, y: 8.124825, z: 2.3659418}
+  m_Center: {x: -0.048298895, y: 3.5623977, z: 0.018981425}
 --- !u!1 &917382702549751999
 GameObject:
   m_ObjectHideFlags: 0

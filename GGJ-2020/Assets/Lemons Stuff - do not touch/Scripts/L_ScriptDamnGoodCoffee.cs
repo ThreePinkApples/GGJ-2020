@@ -23,7 +23,7 @@ public class L_ScriptDamnGoodCoffee : MonoBehaviour
         float distance = Vector3.Distance(player.transform.position, transform.position);
         //Debug.Log(distance);
         musicVolume = (100 - distance)/100;
-        Debug.Log(musicVolume);
+        //Debug.Log(musicVolume);
         acidJazz.volume = musicVolume;
    
     }

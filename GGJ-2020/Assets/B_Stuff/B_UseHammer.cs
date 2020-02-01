@@ -75,9 +75,16 @@ public class B_UseHammer : MonoBehaviour
         }
     }
 
-    public void HammerHit()
+    public void HammerHit(GameObject other)
     {
         Debug.Log("Hammer hit!");
+
+        if(other.GetComponent<L_ScriptMans>())
+        {
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            other.GetComponent<L_ScriptMans>().Kill();
+        }
+
         GameObject.FindObjectOfType<B_PlayOneShotChromaticAberation>().PlayOneShot(intensity, speed, pause);
     }
 }

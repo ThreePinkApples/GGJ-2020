@@ -14,22 +14,45 @@ public class L_ScriptMans : MonoBehaviour
     Vector3 move = new Vector3(1, 0, 0);
     int rotSpeed = 10;
 
-    float walkSpeed = .25f;
+    public float walkSpeed = .25f;
 
     GameObject player;
 
+    private bool _isDead = false;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        StartCoroutine(CommitSilentSudoku());
     }
 
+    public void Kill()
+    {
+        _isDead = true;
 
+        StartCoroutine(CommitSudoku());
+    }
+
+    private IEnumerator CommitSudoku()
+    {
+        yield return new WaitForSeconds(15);
+
+        Destroy(this.gameObject);
+    }
+
+    private IEnumerator CommitSilentSudoku()
+    {
+        yield return new WaitForSeconds(180);
+
+        Destroy(this.gameObject);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position -= move * walkSpeed;
+        if(!_isDead)
+            transform.position -= move * walkSpeed;
 
         leftLeg.transform.RotateAround(leftLegRotation.transform.position,rot,rotSpeed);
         rightLeg.transform.RotateAround(rightLegRotation.transform.position, rot, rotSpeed);
