@@ -14,6 +14,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public L_ScriptDamnGoodBeanJuice beanJuiceScript;
         public L_ScriptChangeMusic musicScript;
+
+        public GameObject enderMans;
         // Start is called before the first frame update
         void Start()
         {
@@ -35,7 +37,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 musicScript.ChangeMusic();
                 RigidbodyFirstPersonController.endIsNear = true;
                 beanJuiceScript.MoveBeanJuice();
-                beanJuiceText.SetActive(true);
+                if (!beanJuiceText.activeSelf)
+                {
+                    beanJuiceText.SetActive(true);
+                }
+
+                enderMans.SetActive(true);
 
                 
             }

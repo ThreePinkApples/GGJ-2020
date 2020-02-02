@@ -15,7 +15,7 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //MoveBeanJuice();
-        beanReciever.transform.Find("BeanReciever");
+       // beanReciever.transform.Find("BeanReciever");
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
 
     public void RotateTheBeanJuice()
     {
-        transform.LookAt(beanReciever);
+        //transform.LookAt(beanReciever);
         drink = true;
     }
 
