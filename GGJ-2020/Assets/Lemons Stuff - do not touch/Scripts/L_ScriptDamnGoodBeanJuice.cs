@@ -23,6 +23,7 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DrinkTheBeanJuice();
 
         if (drink)
         {
@@ -52,6 +53,6 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
 
     public void DrinkTheBeanJuice()
     {
-        coffee.transform.position += transform.up * .010f;
+        coffee.transform.position += transform.up * Time.deltaTime/3;
     }
 }
