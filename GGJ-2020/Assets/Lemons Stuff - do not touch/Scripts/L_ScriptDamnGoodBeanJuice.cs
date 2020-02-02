@@ -21,7 +21,6 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DrinkTheBeanJuice();
 
         if (drink)
         {
