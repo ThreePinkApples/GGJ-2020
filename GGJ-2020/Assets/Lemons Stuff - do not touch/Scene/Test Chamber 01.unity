@@ -8139,7 +8139,8 @@ GameObject:
   - component: {fileID: 578608217}
   - component: {fileID: 578608216}
   - component: {fileID: 578608215}
-  m_Layer: 0
+  - component: {fileID: 578608218}
+  m_Layer: 13
   m_Name: Endgame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8160,7 +8161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endIsNear: 0
   endTrigger: {fileID: 578608216}
-  beanJuiceText: {fileID: 651543132}
+  beanJuiceText: {fileID: 1854460100}
   beanJuiceScript: {fileID: 0}
   musicScript: {fileID: 0}
   enderMans: {fileID: 137931592}
@@ -8175,8 +8176,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7140198, y: 3.8292456, z: 6.177574}
-  m_Center: {x: 0.3570099, y: -1.4146228, z: 0.14443588}
+  m_Size: {x: 2.6520386, y: 3.8292456, z: 6.177574}
+  m_Center: {x: -0.11199951, y: -1.4146228, z: 0.14443588}
 --- !u!4 &578608217
 Transform:
   m_ObjectHideFlags: 0
@@ -8191,6 +8192,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &578608218
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578608214}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &580019486
 GameObject:
   m_ObjectHideFlags: 0
@@ -8746,7 +8763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &651543133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10235,24 +10252,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020237355, y: 0.019999994, z: 0.41757014}
   m_Center: {x: 0, y: 0, z: -0.19878508}
---- !u!114 &760604447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760604442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c48812a13b9f87419b220104ad88f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endIsNear: 0
-  endTrigger: {fileID: 760604443}
-  beanJuiceText: {fileID: 0}
-  beanJuiceScript: {fileID: 0}
-  musicScript: {fileID: 0}
-  enderMans: {fileID: 0}
 --- !u!1 &763068373
 GameObject:
   m_ObjectHideFlags: 0
@@ -25506,7 +25505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1854460101
 RectTransform:
   m_ObjectHideFlags: 0

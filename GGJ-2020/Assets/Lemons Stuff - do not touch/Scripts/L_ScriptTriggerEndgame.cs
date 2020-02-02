@@ -19,8 +19,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Start is called before the first frame update
         void Start()
         {
-            beanJuiceScript = GameObject.Find("Cup").GetComponent<L_ScriptDamnGoodBeanJuice>();
-            musicScript = GameObject.FindGameObjectWithTag("Player").GetComponent<L_ScriptChangeMusic>();
+            beanJuiceScript = GameObject.FindObjectOfType<L_ScriptDamnGoodBeanJuice>();
+            musicScript = GameObject.FindObjectOfType<L_ScriptChangeMusic>();
 
         }
 
@@ -32,8 +32,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Player")
-            {
+            //if (other.gameObject.tag == "Player")
+            //{
                 musicScript.ChangeMusic();
                 RigidbodyFirstPersonController.endIsNear = true;
                 beanJuiceScript.MoveBeanJuice();
@@ -45,7 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 enderMans.SetActive(true);
 
                 
-            }
+            //}
         }
     }
 
