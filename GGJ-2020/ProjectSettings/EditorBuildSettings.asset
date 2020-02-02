@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Lemons Stuff - do not touch/Scene/Test Chamber 01.unity
+    guid: 610e63a632a317c48aa6f6b84921ec62
   m_configObjects: {}
