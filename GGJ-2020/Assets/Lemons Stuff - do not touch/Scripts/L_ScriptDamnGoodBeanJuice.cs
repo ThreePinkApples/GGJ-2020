@@ -16,8 +16,6 @@ public class L_ScriptDamnGoodBeanJuice : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //MoveBeanJuice();
         beanReciever.transform.Find("BeanReciever");
-
-        
     }
 
     // Update is called once per frame
